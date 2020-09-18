@@ -1,0 +1,45 @@
+ Tasks for this project
+ 
+#ResourceMapping#
+
+User->Posts //OneToManyRelation
+ 
+Retrieve all Users- GET/users
+Create a User-      POST/users
+Retrieve one user-  GET/users/{id} ->/users/1
+Delete User-        DELETE /users/{id}
+
+
+Retrieve all posts for a user- GET/users/{id}/posts
+Create a post for a User-      POST/users/{id}/posts
+Retrieve details of a post -   GET/users/{id}/posts/{post_id}
+
+
+::::NOTES::::
+
+
+Dispatcher Servlet{DS} play a key role in sending requests and response for a web application.
+DS is also called as front controller of Spring MVC framework,As springBoot is based on Spring MVC so it 
+SpringBoot automatically configures a DS which handles all the requests [/]<--Root  of URL
+
+How does HelloWorldBean application got converted in JSON...[HTTPMessageConverters and JacksonToObjectMapper converts the Object to JSON format and vice-versa]
+SpringBoot also creates a default error page. 
+
+
+URL entered on browser
+----> Request sent to Dispatcher Servlet{It knows all the mappings of URL to methods} 
+----> DS selects the appropriate controller and the method to execute.
+----> After getting a bean, it looks for how to send the response back.
+----> It gets @RestController which has in-built @ResponseBody[It defines the fileType for the Output(Here its JSON)]
+---->(Response of  that will be mapped by a message converter,In this case it is Jackson ).
+
+
+****
+Here's a complete code backup you can refer to if you have any problems with this section!
+https://github.com/in28minutes/spring-microservices/blob/master/02.restful-web-services/2.3.1.RELEASE-upgrade.md 
+****
+
+
+
+
+  
